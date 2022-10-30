@@ -3,3 +3,5 @@ That being said, the Empress of Light and Moon Lord aren't lawyers; they won't m
 
 Adds the Forged Developer Signature, a way to use the special dev-only colors of many weapons (Last Prism, Starlight, Eventide, Nightglow, Terraprisma) without changing your name.
 Simply... "get creative" with any sort of legal document (Pet Licenses + Black Ink @ Tinkerer's Workshop) and the colors will be yours.
+
+[url=https://github.com/Antirhinnum/RainbowWeaponForgery]Source on GitHub[/url]

@@ -20,6 +20,11 @@ public sealed class VanillaForgeryLicense : ModItem, IHaveSpecialShiftClickBehav
 
 	private int _currentlyForgedNameIndex;
 
+	public override void SetStaticDefaults()
+	{
+		SacrificeTotal = 1;
+	}
+
 	public override void SetDefaults()
 	{
 		Item.Size = new(16, 16);
@@ -89,13 +94,6 @@ public sealed class VanillaForgeryLicense : ModItem, IHaveSpecialShiftClickBehav
 			.Register();
 	}
 
-	// Was used for the demonstration video.
-	//public override void UpdateInventory(Player player)
-	//{
-	//	int index = player.FindItem(Type);
-	//	ItemSlot.SwapEquip(player.inventory, ItemSlot.Context.InventoryItem, index);
-	//}
-
 	public override void SaveData(TagCompound tag)
 	{
 		tag.Add(nameof(_currentlyForgedNameIndex), _currentlyForgedNameIndex);
@@ -114,6 +112,16 @@ public sealed class VanillaForgeryLicense : ModItem, IHaveSpecialShiftClickBehav
 	public override void NetReceive(BinaryReader reader)
 	{
 		_currentlyForgedNameIndex = reader.Read7BitEncodedInt();
+	}
+
+	public override ModItem Clone(Item newEntity)
+	{
+		VanillaForgeryLicense newItem = (VanillaForgeryLicense)base.Clone(newEntity);
+		newItem._projectileForColor = new()
+		{
+			owner = _projectileForColor.owner
+		};
+		return newItem;
 	}
 
 	int[] IHaveSpecialShiftClickBehavior.AllowedContexts => new int[]

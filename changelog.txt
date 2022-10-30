@@ -1,0 +1,3 @@
+﻿[list][*]Added a research value to the Forged Developer Signature.
+[*]Re-released on stable.
+[*]Fixed bug with cloning the Forged Developer Signature.[/list]
