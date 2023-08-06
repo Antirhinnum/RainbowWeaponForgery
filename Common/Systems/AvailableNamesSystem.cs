@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
-using IL_Projectile = IL.Terraria.Projectile;
-using On_Projectile = On.Terraria.Projectile;
 
 namespace RainbowWeaponForgery.Common.Systems;
 

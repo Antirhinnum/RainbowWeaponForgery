@@ -1,27 +1,18 @@
-﻿Mods.RainbowWeaponForgery:
-{
-	ItemName:
-	{
-		VanillaForgeryLicense: "Forged Developer Signature"
-	}
-	
-	ItemTooltip:
-	{
-		VanillaForgeryLicense:
-			'''
-			'I swear it's real!'
-			Allows for the usage of special colors for some items without renaming your character
-			Shift-click to cycle names forwards, control-shift-click to cycle backwards
-			'''
-	}
-	
-	ExtraTooltip:
-	{
-		CurrentName: "Currently Forged Name: {Name}"
-	}
-	
-	Misc:
-	{
-		LicenseRecipeGroup: "legal document"
+Mods: {
+	RainbowWeaponForgery: {
+		Misc.LicenseRecipeGroup: legal document
+
+		Items: {
+			VanillaForgeryLicense: {
+				DisplayName: Forged Developer Signature
+				Tooltip:
+					'''
+					'I swear it's real!'
+					Allows for the usage of special colors for some items without renaming your character
+					Shift-click to cycle names forwards, control-shift-click to cycle backwards
+					'''
+				CurrentName: Currently Forged Name: {Name}
+			}
+		}
 	}
 }

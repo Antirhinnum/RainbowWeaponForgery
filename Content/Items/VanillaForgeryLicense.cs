@@ -6,7 +6,6 @@ using System.IO;
 using Terraria;
 using Terraria.Enums;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.UI;
@@ -20,17 +19,11 @@ public sealed class VanillaForgeryLicense : ModItem, IHaveSpecialShiftClickBehav
 
 	private int _currentlyForgedNameIndex;
 
-	public override void SetStaticDefaults()
-	{
-		SacrificeTotal = 1;
-	}
-
 	public override void SetDefaults()
 	{
 		Item.Size = new(16, 16);
 		Item.accessory = true;
 		Item.SetShopValues(ItemRarityColor.Orange3, Item.sellPrice(gold: 1));
-		Item.canBePlacedInVanityRegardlessOfConditions = true;
 
 		_currentlyForgedNameIndex = 0;
 		_projectileForColor = new()
@@ -82,7 +75,7 @@ public sealed class VanillaForgeryLicense : ModItem, IHaveSpecialShiftClickBehav
 				rainbowColor = _projectileForColor.GetFairyQueenWeaponsColor();
 			}
 
-			string text = Language.GetTextValueWith($"Mods.{nameof(RainbowWeaponForgery)}.ExtraTooltip.CurrentName", new { Name = name });
+			string text = this.GetLocalization("CurrentName").FormatWith(new { Name = name });
 			TooltipLine currentNameLine = new(Mod, $"{nameof(RainbowWeaponForgery)}:CurrentName", text)
 			{
 				OverrideColor = rainbowColor
