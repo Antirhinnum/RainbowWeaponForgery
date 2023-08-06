@@ -47,6 +47,14 @@ public sealed class VanillaForgeryLicense : ModItem, IHaveSpecialShiftClickBehav
 		}
 	}
 
+	public override void UpdateVanity(Player player)
+	{
+		if (player.TryGetModPlayer(out ForgedNamePlayer fPlayer))
+		{
+			fPlayer.currentlyForgedNameIndex = _currentlyForgedNameIndex;
+		}
+	}
+
 	public override void ModifyTooltips(List<TooltipLine> tooltips)
 	{
 		string name = AvailableNamesSystem.PossibleNames[_currentlyForgedNameIndex];
